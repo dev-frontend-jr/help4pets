@@ -4,23 +4,28 @@
 .header {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: space-between;
   align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 32px;
+  padding-bottom: 28px;
 }
-.header-menu {
+.header-menu{
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
 }
-.header-menu a {
+.header-menu li:nth-of-type(-n + 3) {
+  margin-right: 32px;
+}
+.header-menu li:last-child {
+  margin-left: 48px;
+}
+.header-menu li:nth-of-type(-n + 4) a {
   display: inline-block;
-  padding: 16px 0;
+  padding: 10px 0;
   position: relative;
 }
-.header-menu a:after {
+
+.header-menu li:nth-of-type(-n + 4) a:after {
   content: "";
   display: block;
   height: 2px;
@@ -30,9 +35,9 @@
   transition: 0.2s;
   position: absolute;
 }
-.header-menu a:hover::after,
-.header-menu a.ativo::after {
-  width: 100%;
+.header-menu li:nth-of-type(-n + 4) a:hover::after,
+.header-menu li:nth-of-type(3) a.ativo::after {
+  width: 50%;
 }
 
 @media (max-width: 800px) {
