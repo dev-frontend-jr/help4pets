@@ -1,0 +1,48 @@
+.servicos-bg {
+  background: var(--cor-2-l) url(../../img/dec/bg_detalhe.svg) no-repeat bottom
+  -77px left;
+}
+.serviços {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  justify-items: center;
+}
+.serviços-conteudo {
+  display: grid;
+  justify-items: center;
+  padding-bottom: 150px;
+  padding-top: 80px;
+}
+.serviços-conteudo h2 {
+  padding-top: 16px;
+  padding-bottom: 84px;
+}
+.serviços-conteudo ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2.5rem;
+}
+.serviços-conteudo li {
+  display: grid;
+  justify-items: center;
+  background-color: var(--cor-900);
+  padding: 44px 28px 44px 28px;
+  border-radius: 5px;
+}
+.serviços-conteudo p {
+  text-align: center;
+}
+.card-serviços {
+  display: grid;
+  justify-items: center;
+  width: 8.125rem;
+}
+
+
+@media (max-width: 1200px) {
+  .serviços-conteudo ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+}

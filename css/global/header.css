@@ -30,7 +30,7 @@
   display: block;
   height: 2px;
   width: 0;
-  background-color: var(--cor-300);
+  background-color: var(--cor-1-l);
   margin-top: 2px;
   transition: 0.2s;
   position: absolute;

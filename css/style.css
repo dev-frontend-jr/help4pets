@@ -10,25 +10,17 @@
 
 /* Home */
 @import url(./home/introducao.css);
-@import url(./home/tecnologia.css);
-@import url(./home/parceiros.css);
+@import url(./home/serviços.css);
+
 @import url(./home/depoimentos.css);
 
-/* bicicletas */
-@import url(./bicicletas/bicicletas-lista.css);
-@import url(./bicicletas/bicicletas.css);
+/* bicicletas */;
 
 /* bicicleta */
-@import url(./bicicleta/bicicleta.css);
-@import url(./bicicleta/seguro.css);
 
 /* seguros */
-@import url(./seguros/seguros.css);
-@import url(./seguros/vantagens.css);
-@import url(./seguros/perguntas.css);
 
 /* termos */
-@import url(./termos/termos.css);
 
 /* contato */
 @import url(./contato/contato.css);

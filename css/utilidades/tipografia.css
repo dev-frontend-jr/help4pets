@@ -70,13 +70,18 @@
 
 
 @media (max-width: 1200px) {
-  .font-1-xxl {
-    font-size: 3rem;
+  .font-h1 {
+    font-size: 3.5rem;
   }
 }
 
 @media (max-width: 800px) {
-  .font-1-xxl {
-    font-size: 2rem;
+  .font-h1 {
+    font-size: 3rem;
   }
+  
+  /* SUBTILES */
+.font-sub-r {
+  font-size: 1.25rem;
+}
 }
