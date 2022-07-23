@@ -1,5 +1,5 @@
 .servicos-bg {
-  background: var(--cor-2-l) url(../../img/dec/bg_detalhe.svg) no-repeat bottom -77px
+  background: var(--cor-2-l) url(../../img/dec/bg_detalhe.svg) no-repeat bottom -60px
     left;
   background-size: contain;
 }
@@ -36,9 +36,9 @@
   padding-bottom: 2.75rem;
 }
 @media (max-width: 1500px) {
-  .servicos-bg {
+  /* .servicos-bg {
     background: 0;
-  }
+  } */
 }
 @media (max-width: 1200px) {
   .serviços ul {

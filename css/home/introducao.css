@@ -37,8 +37,9 @@
   margin-bottom: 2rem;
 }
 .intro p {
-  max-width: 50rem;
+  max-width: 40.625rem;
   margin-bottom: 3.5rem;
+  font-size: 1.25rem;
 }
 
 .detalhe-hero {
@@ -46,6 +47,7 @@
   place-content: center;
   grid-column: 1/-1;
 }
+
 
 @media (max-width: 1820px) {
   .intro-conteudo {
