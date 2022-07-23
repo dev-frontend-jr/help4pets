@@ -1,48 +1,78 @@
 .servicos-bg {
-  background: var(--cor-2-l) url(../../img/dec/bg_detalhe.svg) no-repeat bottom
-  -77px left;
+  background: var(--cor-2-l) url(../../img/dec/bg_detalhe.svg) no-repeat bottom -77px
+    left;
+  background-size: contain;
 }
 .serviços {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
   justify-items: center;
+  padding-bottom: 9.375rem;
+  padding-top: 5rem;
 }
-.serviços-conteudo {
-  display: grid;
-  justify-items: center;
-  padding-bottom: 150px;
-  padding-top: 80px;
+.serviços h2 {
+  padding-top: 1rem;
+  padding-bottom: 5.25rem;
 }
-.serviços-conteudo h2 {
-  padding-top: 16px;
-  padding-bottom: 84px;
-}
-.serviços-conteudo ul {
+.serviços ul {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
   gap: 2.5rem;
 }
-.serviços-conteudo li {
-  display: grid;
+.serviços li {
   justify-items: center;
   background-color: var(--cor-900);
-  padding: 44px 28px 44px 28px;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
+  min-width: 11.875rem;
 }
-.serviços-conteudo p {
+.serviços p {
   text-align: center;
 }
-.card-serviços {
+.card-serviços li {
   display: grid;
-  justify-items: center;
-  width: 8.125rem;
+  place-items: center;
+  max-width: 8.125rem;
+  padding-top: 2.75rem;
+  padding-bottom: 2.75rem;
 }
-
-
-@media (max-width: 1200px) {
-  .serviços-conteudo ul {
-    grid-template-columns: repeat(3, 1fr);
+@media (max-width: 1500px) {
+  .servicos-bg {
+    background: 0;
   }
-  
+}
+@media (max-width: 1200px) {
+  .serviços ul {
+    gap: 2rem;
+  }
+  .card-serviços li {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .serviços li {
+    min-width: 8.125rem;
+  }
+  .serviços h2 {
+    padding-top: 0.625rem;
+    padding-bottom: 2.5rem;
+  }
+}
+@media (max-width: 900px) {
+  .serviços ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+@media (max-width: 600px) {
+  .serviços {
+    padding-bottom: 64px;
+    padding-top: 32px;
+  }
+  .serviços ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .card-serviços img {
+    width: 60%;
+    height: 60%;
+  }
 }

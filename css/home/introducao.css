@@ -1,30 +1,30 @@
-.introducao-bg {
+.intro-bg {
   background: var(--cor-900);
 }
 .container-intro {
   box-sizing: border-box;
-  max-width: 1800px;
-  padding-left: 20px;
-  padding-right: 20px;
+  max-width: 112.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
   margin-left: auto;
   margin-right: auto;
 }
-.introducao {
+.intro {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto;
-  padding-bottom: 60px;
+  padding-bottom: 3.75rem;
   gap: 1rem;
 }
 
-.introducao-conteudo {
-  padding-left: 300px;
-  padding-top: 60px;
-  padding-bottom: 60px;
+.intro-conteudo {
+  padding-left: 18.75rem;
+  padding-top: 3.75rem;
+  padding-bottom: 3.75rem;
 }
 
-.introducao a {
-  margin-bottom: 16px;
+.intro a {
+  margin-bottom: 1rem;
 }
 
 .img-intro {
@@ -33,12 +33,12 @@
   object-fit: scale-down;
 }
 
-.introducao h1 {
-  margin-bottom: 32px;
+.intro h1 {
+  margin-bottom: 2rem;
 }
-.introducao p {
-  max-width: 800px;
-  margin-bottom: 56px;
+.intro p {
+  max-width: 50rem;
+  margin-bottom: 3.5rem;
 }
 
 .detalhe-hero {
@@ -48,50 +48,53 @@
 }
 
 @media (max-width: 1820px) {
-  .introducao-conteudo {
-    padding-left: 150px;
+  .intro-conteudo {
+    padding-left: 9.375rem;
   }
   .container-intro {
-    max-width: 1500px;
+    max-width: 93.75rem;
   }
 }
 @media (max-width: 1530px) {
-  .introducao-conteudo {
+  .intro-conteudo {
     padding-left: 0;
   }
   .container-intro {
-    max-width: 1200px;
+    max-width: 75rem;
   }
-  .introducao {
+  .intro {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 1200px){
-  .introducao p {
+  .intro p {
     margin-bottom: 2rem;
   }
-  .introducao h1 {
+  .intro h1 {
     margin-bottom: 1rem;
   }
 }
-
-
+@media (max-width: 900px) {
+  .detalhe-hero{
+    display: none;
+  }
+}
 @media (max-width: 800px) {
-  .introducao {
+  .intro {
     grid-template-columns: 1fr;
   }
-  .introducao-conteudo {
+  .intro-conteudo {
     padding-top: 0px;
     padding-bottom: 0px;
   }
-
   .img-intro {
     height: 300px;
     object-fit: cover;
     object-position: top;
   }
-  .introducao p:last-child {
+  .intro p:last-child {
     margin-bottom: 0px;
   }
 }
+
