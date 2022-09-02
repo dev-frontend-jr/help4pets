@@ -1,85 +1,179 @@
-/* fixed header */
-.content {
-  padding-top: 16px;
+/* HEADER_SCROLL_TRANSITION
+Transições do Header ao rolar a pagina adicionando a classe .in-transition via javascript */
+.in-transition.h-bg {
+  box-shadow: 0rem 0.625rem 0.75rem -0.625rem rgba(75, 64, 59, 0.1);
+  transition: box-shadow 0.9s;
 }
-.sticky {
+.in-transition .h-box{
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  transition: padding-bottom 0.3s, padding-top 0.3s;
+}
+.in-transition .h-logo img {
+  max-width: 11.75rem;
+  transition: max-width 0.3s;
+}
+header:not(.in-transition) .h-box{
+  transition: padding-bottom 0.3s, padding-top 0.3s;
+}
+header:not(.in-transition) .h-logo img {
+  transition: max-width 0.3s;
+}
+header:not(.in-transition).h-bg {
+  transition: box-shadow 0.9s;
+}
+.padtop-fixheader {
+  padding-top: 150px;
+}
+
+/* MENU_MOBILE 
+Botao mobile(burger) fica escondido acima de 900px*/
+.bgr-menu {
+  display: none;
+}
+#btn-mobile {
+  display: none;
+}
+
+/* HEADER
+Header fixado no topo, display flex */
+.h-bg {
+  background-color: var(--cor-900);
+  min-width: 100vw;
   position: fixed;
   top: 0;
-  width: 100%;
 }
-.sticky + .content {
-  padding-top: 164px;
-}
-/* /////////// */
-/* menu burger */
-
-.icon {
-  display: none;
-}
-.topnav{
-  display: none;
-}
-
-/* /////////// */
-
-.header-bg {
-  background-color: var(--cor-900);
-}
-
-.header {
+.h-box{
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding-top: 2rem;
-  padding-bottom: 1.75rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
-.header-menu {
+.h-menu {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+  gap: 32px;
 }
-.header-menu li:last-child {
-  margin-left: 1rem;
+.h-menu li:last-child {
+  margin-left: 0.5rem;
 }
-.header-menu li:nth-of-type(-n + 4) a {
+.h-menu li:nth-of-type(-n + 4) a {
   display: inline-block;
   padding: 0.625rem 0;
   position: relative;
 }
-
-.header-menu li:nth-of-type(-n + 4) a:after {
+.h-menu li:nth-of-type(-n + 4) a:after {
   content: "";
   display: block;
-  height: 0.125rem;
+  height: 2px;
   width: 0;
   background-color: var(--cor-1-l);
-  margin-top: 0.125rem;
+  margin-top: 2px;
   transition: 0.2s;
   position: absolute;
 }
-.header-menu li:nth-of-type(-n + 4) a:hover::after,
-.header-menu li:nth-of-type(3) a.ativo::after {
+.h-menu li:nth-of-type(-n + 4) a:hover::after,
+.h-menu li:nth-of-type(3) a.ativo::after {
   width: 65%;
 }
 
+/* MEDIA_QUERIES
+1200px resize header 
+900px menu mobile
+425px resize header */
 
-@media screen and (max-width: 1100px) {
-  .icon {
+/* MEDIA_1200 */
+@media (max-width: 1200px) {
+  .h-logo {
+    max-width: 12.5rem;
+  }
+  .h-box{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .h-menu {
+    gap: 16px;
+  }
+  .in-transition .h-box{
+    padding-bottom: 0.25rem;
+    padding-top: 0.25rem;
+  }
+  .in-transition .h-logo img {
+    max-width: 10.625rem;
+  }
+}
+
+/* MEDIA_900 */
+@media (max-width: 900px) {
+  .hide-scroll {
+    height: 100%;
+    overflow: hidden;
+  }
+  .burger-menu {
     display: block;
-    justify-self: end;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    right: 0rem;
+    text-align: center;
+    background: var(--cor-900);
+    z-index: 1000;
+    height: 0rem;
+    visibility: hidden;
   }
-  .header nav {
-    display: none;
+  #nav.active .burger-menu {
+    height: 100vh;
+    visibility: visible;
   }
-  .topnav.responsive {
+  .burger-menu a {
+    padding: 16px 0;
+    margin: 0 16px;
+    border-bottom: 0.125rem solid rgba(0, 0, 0, 0.05);
+  }
+  #btn-mobile {
+    display: flex;
+    padding: 8px 16px;
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 8px;
+  }
+  #hamburger {
+    border-top: 0.125rem solid;
+    width: 1.25rem;
+  }
+  #hamburger::after,
+  #hamburger::before {
+    content: "";
     display: block;
+    width: 1.25rem;
+    height: 0.125rem;
+    background: currentColor;
+    margin-top: 0.3125rem;
+    transition: 0.3s;
+    position: relative;
   }
-  .topnav-item {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    justify-items: center;
-    max-width: 350px;
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -0.4375rem;
+  }
+}
+@media (max-width: 425px) {
+  .h-logo img {
+    max-width: 9.75rem;
+  }
+  .in-transition .h-box{
+    padding-bottom: 0.25rem;
+    padding-top: 0.25rem;
+  }
+  .in-transition .h-logo img {
+    max-width: 7.875rem;
   }
 }

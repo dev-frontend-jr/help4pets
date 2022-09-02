@@ -1,29 +1,40 @@
 // FIXED HEADER
 window.onscroll = function () {
-  fixedHeader();
-};
-var header = document.getElementById("myHeader");
-var sticky = header.offsetTop;
-function fixedHeader() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
+  transitionHeader();
+}
+var header = document.getElementById("Header");
+var scrolling = header.offsetTop;
+function transitionHeader() {
+  if (window.pageYOffset > scrolling) {
+    header.classList.add("in-transition");
   } else {
-    header.classList.remove("sticky");
+    header.classList.remove("in-transition");
   }
 }
 
-// TOGGLE CONTAINER
-// function tooggleButton() {
-//   var element = document.getElementById("myTopnav");
-//   element.classList.toggle("topnav");
-// }
+// // MENU BURGER
 
-// MENU BURGER
-function menuBurger() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
+const btnMobile = document.getElementById('btn-mobile');
+
+function toggleMenu(event) {
+  if (event.type === 'touchstart') event.preventDefault();
+
+  const hiddenArea = document.getElementById('body');
+  hiddenArea.classList.toggle('hide-scroll');
+
+  const nav = document.getElementById('nav');
+  nav.classList.toggle('active');
+
+  const active = nav.classList.contains('active');
+  event.currentTarget.setAttribute('aria-expanded', active);
+
+  if (active) {
+    event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
   } else {
-    x.className = "topnav";
+    event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
   }
 }
+
+btnMobile.addEventListener('click', toggleMenu);
+btnMobile.addEventListener('click', transitionHeader);
+btnMobile.addEventListener('touchstart', toggleMenu);
